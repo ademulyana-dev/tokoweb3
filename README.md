@@ -304,3 +304,26 @@ Tidak perlu install apapun. Cukup:
 
 *Smart contract di-deploy dan diverifikasi di Ethereum Sepolia Testnet.*
 *Lihat kontrak: https://sepolia.etherscan.io/address/0xD909C6961Cd9b6a3CefAa6198fa92f963aeB3994*
+
+
+
+<img width="1917" height="958" alt="image" src="https://github.com/user-attachments/assets/07bd40ab-3cc0-43a4-b3dc-b98665d681fb" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/93336dd5-8e1a-4e4c-9af3-bb3be641343b" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/250fb30c-bc1b-49af-b06e-2efa775e39c8" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5f762511-27d8-4df8-ac10-c38cb42ae38f" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/08e94049-e30c-498d-baff-c01e2ae212e6" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/55a033ed-4ff8-487a-86b7-2d159255a751" />
+
+
+
+
+
+
+
+
+
