@@ -6,6 +6,7 @@ import { STATUS_LABELS, STATUS_CLASSES } from '../lib/constants';
 import { ShieldAlert, RefreshCw, Plus, Edit2, Settings, DollarSign, PackageOpen, ListOrdered } from 'lucide-react';
 import ProductModal from '../components/ProductModal';
 import StatusModal from '../components/StatusModal';
+import ProductImage from '../components/ProductImage';
 
 export default function OwnerPage() {
   const { contract, walletAddress, isOwner } = useWeb3();
@@ -316,24 +317,29 @@ export default function OwnerPage() {
             <div className="col-span-full py-12 text-center text-zinc-500 tracking-widest uppercase text-xs">No products found</div>
           ) : (
             products.map(p => (
-              <div key={p.id.toString()} className="bg-white border border-zinc-200 p-6 flex flex-col gap-4 hover:border-zinc-300 transition-colors">
-                <div className="flex justify-between items-start gap-4">
-                  <div>
-                    <h3 className="font-serif text-lg text-zinc-900 mb-1">{p.name}</h3>
-                    <div className="text-xs font-mono text-zinc-500">ID: {p.id.toString()}</div>
-                  </div>
-                  <div className="font-mono text-zinc-900 font-medium">{formatUSDC(p.price)}</div>
+              <div key={p.id.toString()} className="bg-white border border-zinc-200 flex flex-col hover:border-zinc-300 transition-colors overflow-hidden">
+                <div className="h-48 bg-zinc-100 overflow-hidden">
+                  <ProductImage productId={p.id.toString()} productName={p.name} className="w-full h-full" />
                 </div>
-                <p className="text-sm text-zinc-500 line-clamp-2 flex-1">{p.description}</p>
-                <button
-                  onClick={() => {
-                    setEditingProduct(p);
-                    setIsProductModalOpen(true);
-                  }}
-                  className="w-full flex items-center justify-center gap-2 py-3 bg-white border border-zinc-200 text-zinc-600 hover:text-zinc-900 hover:border-zinc-300 transition-colors text-xs font-medium tracking-widest uppercase mt-4"
-                >
-                  <Edit2 className="w-4 h-4" /> Edit
-                </button>
+                <div className="p-6 flex flex-col gap-4 flex-1">
+                  <div className="flex justify-between items-start gap-4">
+                    <div>
+                      <h3 className="font-serif text-lg text-zinc-900 mb-1">{p.name}</h3>
+                      <div className="text-xs font-mono text-zinc-500">ID: {p.id.toString()}</div>
+                    </div>
+                    <div className="font-mono text-zinc-900 font-medium">{formatUSDC(p.price)}</div>
+                  </div>
+                  <p className="text-sm text-zinc-500 line-clamp-2 flex-1">{p.description}</p>
+                  <button
+                    onClick={() => {
+                      setEditingProduct(p);
+                      setIsProductModalOpen(true);
+                    }}
+                    className="w-full flex items-center justify-center gap-2 py-3 bg-white border border-zinc-200 text-zinc-600 hover:text-zinc-900 hover:border-zinc-300 transition-colors text-xs font-medium tracking-widest uppercase mt-4"
+                  >
+                    <Edit2 className="w-4 h-4" /> Edit
+                  </button>
+                </div>
               </div>
             ))
           )}

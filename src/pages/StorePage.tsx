@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useWeb3 } from '../contexts/Web3Context';
 import { useToast } from '../contexts/ToastContext';
-import { getProductEmoji, formatUSDC } from '../lib/utils';
+import { formatUSDC } from '../lib/utils';
 import { ShoppingBag, Loader2 } from 'lucide-react';
 import CartModal from '../components/CartModal';
+import ProductImage from '../components/ProductImage';
 
 export default function StorePage() {
   const { readContract, walletAddress } = useWeb3();
@@ -92,8 +93,8 @@ export default function StorePage() {
             return (
               <div key={p.id.toString()} className="group flex flex-col">
                 <div className="aspect-[3/4] bg-zinc-100 flex items-center justify-center text-6xl mb-4 overflow-hidden relative">
-                  <div className="group-hover:scale-110 transition-transform duration-700 ease-out">
-                    {getProductEmoji(p.name)}
+                  <div className="w-full h-full group-hover:scale-110 transition-transform duration-700 ease-out">
+                    <ProductImage productId={p.id.toString()} productName={p.name} className="w-full h-full" />
                   </div>
                   <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
